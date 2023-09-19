@@ -1,0 +1,23 @@
+@import 'base/normalize';
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/globales';
+@import 'base/utilidades';
+
+//pagina princial
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/navegacion';
+@import 'layout/iconos';
+@import 'layout/anuncios';
+@import 'layout/botones';
+@import 'layout/contactar';
+@import 'layout/bloginferior';
+@import 'layout/testimoniales';
+
+//paginas internas - nosotros - formulario dle contacto - 
+
+@import 'internas/nosotros';
+@import 'internas/contactoform';
+@import 'internas/admin';

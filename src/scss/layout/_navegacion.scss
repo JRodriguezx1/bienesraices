@@ -1,0 +1,71 @@
+.barra {  //dentro del div class = barra, esta la imagen del logo y el <nav>...</nav>
+    display: flex;  // los organiza en columna o vertical
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    @include tablet {   // cuando supera esta resolucion los organiza horizontalmente
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navegacion {
+  a{
+    &:hover {color: $verde;}
+    color: $blanco;
+    text-decoration: none;
+    font-size: 2.2rem;
+    display: block; //los convierte en tipo blok para ocupar todo el espacio
+    text-align: center; 
+    @include tablet {
+      margin-right: 2rem;
+      font-size: 1.8rem;
+      &:last-of-type{
+        margin-right: 0;
+                    }
+                    }
+    
+  }
+    //display: none;  //oculta la navegacion mientras sea inferior a 768px
+    visibility: hidden;
+    opacity: 0;
+    //transition: visibility .1s ease-in-out, opacity 0.1s linear;
+
+    @include tablet {  //cunado llegue a esta resolucion toma los <a></a> y los convierte a flex
+      display: flex;
+      align-items: center;   
+      visibility: visible;
+      opacity: 1;
+    //transition: visibility .1s ease-in-out, opacity 0.1s linear;
+                    }
+}
+
+
+//boton menu
+.movil-menu {
+ //visibility: visible;
+ @include tablet {  //cunado es > 768px oculta el div que contiene la img(barra menu)
+   display: none;
+ }
+ img {
+   width: 5rem;
+ }
+}
+/* igual que el codigo de arriba
+@include tablet {
+  .movil-menu {
+  display: none;}
+}*/
+
+
+.mostrar { //clase que se agrega con js en la <nav>....<nav>
+  //display: block; // muestra la nav.../nav
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.8s linear;
+  /*
+  @include tablet{
+    display: flex;
+    flex-direction: row;
+  }*/
+}

@@ -1,0 +1,44 @@
+.formulario {
+    p{
+    font-size: 1.4rem;
+    color: $grisOscuro;
+    margin: 2rem 0 0 0;
+    }
+    legend {
+        font-size: 2rem;
+        color: $grisOscuro;
+    }
+    label {
+        font-weight: $bold;
+        text-transform: uppercase;
+        display: block;
+    }
+
+    //input[type="text"], input[type="email"], input[type="text"],{
+    input:not([type="submit"]), textarea, select {  //selecciona todos los input menos el de tipo submit  
+     padding: 1rem;
+     display: block;
+     width: 100%;
+     background-color: $blanco;
+     border: 1px solid $gris;
+     border-radius: 1rem;
+     margin-bottom: 2rem;
+    }
+
+    textarea {
+        height: 11rem;
+    }
+
+    .forma-contacto {  //clase donde esta el label del input tipo radio
+        max-width: 30rem;  // tanto los labels con los inputs de tipo radio no sebre pasa los 300px
+        display: flex;
+        align-items: center; //los labels e input tipo radio los alinea verticalmente
+        justify-content: space-between;  // luego los alinea horizontalmente
+    }
+
+    input[type="radio"] {
+        margin: 0;  //le quita margen a los input ripo radio
+        width: auto; //ancho predeterminado o automatico
+    }
+
+}

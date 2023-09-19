@@ -1,0 +1,52 @@
+@include tablet{
+    .seccion-inferior{  //separa el blog del testimonial en 2 columnas
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 2rem;
+
+    }
+}
+
+.entrada-blog {     //separa  la imagen y el texto del blog, en 2 columnas
+    margin-bottom: 2rem;
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+    &:last-of-type{
+        margin-bottom: 0;
+    }
+}
+
+.entrada-texto {
+    a {          //los enlances son de tipo inline y no se le puede poner margin
+        display: block;  //convierte el enlace a tipo block y se le pone margin de 2rem cuando
+        margin-top: 2rem;  //se visualiza en dispositivos pequeños
+        color: $negro;
+        @include tablet {  // para disponisitos mas grandes quita el margin
+            margin-top: 0;
+        }
+    }
+
+    h4 {
+        margin: 0;  //los h1, h2, h3... etc son de tipo block
+        line-height: 2rem;
+
+        &::after {  //seudo elemento. se crea linea horizontal verde que va despues del h4
+            content: '';
+            display: block;
+            width: 15rem;
+            height: 0.5rem;
+            background-color: $verde;
+            margin-top: 1rem;
+        }
+    }
+}
+
+
+.meta {
+    span {
+        color: $amarillo;
+    }  
+}
